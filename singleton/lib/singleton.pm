@@ -1,18 +1,31 @@
 package singleton;
-use strict;
 
-BEGIN {
-    use Exporter ();
-    use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-    $VERSION     = '1';
-    @ISA         = qw(Exporter);
-    #Give a hoot don't pollute, do not export more than needed by default
-    @EXPORT      = qw();
-    @EXPORT_OK   = qw();
-    %EXPORT_TAGS = ();
+=head1 NAME
+
+signleton - class realized singleton constructor
+
+=cut
+
+use strict;
+use warnings;
+use 5.022;
+
+
+=head2 singleton
+
+Constructor
+
+Usage:
+   my $object = singleton new Class;
+
+=cut
+
+sub main::singleton {
+	my $obj   = shift;
+	my $class = ref $obj or return;
+	state $s = {};
+	$s->{$class} //= $obj;
+	return $s->{$class};
 }
 
-
 1;
-# The preceding line will help the module return a true value
-
