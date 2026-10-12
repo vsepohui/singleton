@@ -2,23 +2,35 @@ package singleton;
 
 =head1 NAME
 
-signleton - class realized singleton constructor
+signleton - class realised singleton constructor
 
 =cut
+
+=head1 SYNOPSIS
+
+Usage:
+
+	use singleton;
+	my $object = singleton new Class;
+
+=head1 VERSION
+
+0.2
+
+=head1 AUTHOR
+
+Developed by Ivan Trunaev.
+
+Contacts <ivan@trunaev.ru>
+
+=cut
+
 
 use strict;
 use warnings;
 use 5.022;
 
-
-=head2 singleton
-
-Constructor
-
-Usage:
-   my $object = singleton new Class;
-
-=cut
+our $VERSION = '0.2';
 
 sub main::singleton {
 	my $obj   = shift;

@@ -1,7 +1,0 @@
-MANIFEST
-README
-LICENSE
-Changes
-Makefile.PL
-lib/singleton.pm
-t/001_load.t
